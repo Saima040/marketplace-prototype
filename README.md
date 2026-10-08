@@ -10,7 +10,7 @@
 ![localStorage](https://img.shields.io/badge/Data-localStorage-FF7A3D?style=for-the-badge)
 ![Roles](https://img.shields.io/badge/Roles-Shopper_·_Vendor_·_Admin-9B5DE5?style=for-the-badge)
 
-**[🔗 Live demo](https://REPLACE-WITH-YOUR-VERCEL-LINK.vercel.app)** &nbsp;·&nbsp; **[📸 Screenshots](#-screenshots)** &nbsp;·&nbsp; **[🚀 Run it locally](#-run-it-locally)**
+**[🔗 Live demo](https://marketplace-prototype-one.vercel.app)** &nbsp;·&nbsp; **[📸 Screenshots](#-screenshots)** &nbsp;·&nbsp; **[🚀 Run it locally](#-run-it-locally)**
 
 Demo password for every account: **`demo123`**
 

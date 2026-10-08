@@ -170,12 +170,16 @@ function makeSeedOrders() {
   ];
 }
 
-const seedActivity = [
-  { id: "a4", ts: ago(1), text: "Jordan Lee placed ORD-1003 ($76.76)" },
-  { id: "a3", ts: ago(4), text: "Amara Khan placed ORD-1002 ($84.00)" },
-  { id: "a2", ts: ago(12), text: "Jordan Lee placed ORD-1001 ($70.20)" },
-  { id: "a1", ts: ago(120), text: "Priya Shah opened The Commons Market" },
-];
+// activity text is generated from the seeded orders so the totals always match
+const seedActivity = (() => {
+  const [o3, o2, o1] = makeSeedOrders();
+  return [
+    { id: "a4", ts: ago(1), text: `Jordan Lee placed ${o3.id} (${fmt(o3.total)})` },
+    { id: "a3", ts: ago(4), text: `Amara Khan placed ${o2.id} (${fmt(o2.total)})` },
+    { id: "a2", ts: ago(12), text: `Jordan Lee placed ${o1.id} (${fmt(o1.total)})` },
+    { id: "a1", ts: ago(120), text: "Priya Shah opened The Commons Market" },
+  ];
+})();
 
 function seedSnapshot() {
   return {
@@ -275,7 +279,10 @@ export default function App() {
     return null;
   };
 
-  const logout = () => setSessionId(null);
+  const logout = () => {
+    setToasts([]);
+    setSessionId(null);
+  };
 
   const resetDemo = () => {
     ask({
